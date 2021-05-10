@@ -1,0 +1,109 @@
+The english explanation for these rules is present in readme.
+
+prog:
+declStmt
+| funDeclStmt
+| declStmt prog
+| funDeclStmt prog
+
+funDeclStmt: funName incScope LPAREN declArg RPAREN LBRACE stmts RBRACE decScope
+| funName incScope LPAREN RPAREN LBRACE stmts RBRACE decScope			
+
+declStmt: type identifiersList SEMICOLON
+
+funName: type IDENTIFIER
+
+type: INT
+| CHAR
+| VOID
+| STRING
+
+declArg: declArg COMMA type identifiers
+| type identifiers
+
+identifiersList: identifiers
+| identifiersList COMMA identifiers
+
+identifiers: IDENTIFIER
+| IDENTIFIER multiDim
+
+multiDim: multiDim LBRACKET NUM_CHAR RBRACKET
+| LBRACKET NUM_CHAR RBRACKET
+
+stmts: stmt   				
+| stmts stmt 
+
+stmt:
+| incScope LBRACE stmts RBRACE decScope	
+| controlflowStmt 
+| loopStmt  
+| ifelseStmt 
+| declStmt 
+| customFunc
+| exprStmt
+
+controlflowStmt:  BREAK SEMICOLON 
+| CONTINUE SEMICOLON	
+| RETURN SEMICOLON
+| RETURN expression SEMICOLON
+
+loopStmt: FOR incScopeFor LPAREN exprStmt exprStmt expression RPAREN LBRACE stmts RBRACE decScope
+| FOR incScopeFor LPAREN exprStmt exprStmt RPAREN LBRACE stmts RBRACE decScope
+| WHILE incScopeFor LPAREN expression RPAREN LBRACE stmts RBRACE decScope 
+
+incScopeFor: %empty
+incScope: %empty	
+decScope: %empty	
+
+ifelseStmt: IF LPAREN expression RPAREN incScope LBRACE stmts RBRACE decScope
+| IF LPAREN expression RPAREN incScope LBRACE stmts RBRACE decScope ELSE stmt
+| arithmeticExpr incScope TERNERY expression COLON expression decScope
+
+customFunc: INPUT LPAREN type COMMA IDENTIFIER RPAREN SEMICOLON
+| OUTPUT LPAREN type COMMA IDENTIFIER RPAREN SEMICOLON
+| NEWLINE LPAREN RPAREN SEMICOLON
+
+exprStmt: expression SEMICOLON
+| SEMICOLON
+
+expression : arithmeticExpr
+| STRINGVAL
+| unaryExpr ASSIGN expression
+
+callArg: expression	
+| callArg COMMA expression
+
+arithmeticExpr: unaryExpr
+| arithmeticExpr MUL arithmeticExpr
+| arithmeticExpr DIV arithmeticExpr
+| arithmeticExpr MOD arithmeticExpr
+| arithmeticExpr MINUS arithmeticExpr 	
+| arithmeticExpr LE arithmeticExpr
+| arithmeticExpr GE arithmeticExpr
+| arithmeticExpr LT arithmeticExpr
+| arithmeticExpr GT arithmeticExpr 
+| arithmeticExpr EQ arithmeticExpr
+| arithmeticExpr NE arithmeticExpr 
+| arithmeticExpr BITAND arithmeticExpr
+| arithmeticExpr XOR arithmeticExpr
+| arithmeticExpr BITOR arithmeticExpr 
+| arithmeticExpr AND arithmeticExpr
+| arithmeticExpr OR arithmeticExpr
+
+unaryOperator: MINUS
+| NOT 				
+
+Unary expression can an identifier, number, string, expression within parantheses (scope), function call with no arguments, function call with arguments, unary expression with a unary operator, single dimensional array access using expression, multidimensional array access.
+unaryExpr: IDENTIFIER
+| NUM_CHAR
+| STRINGVAL
+| LPAREN expression RPAREN        	
+| IDENTIFIER LPAREN RPAREN
+| IDENTIFIER LPAREN callArg RPAREN 
+| unaryOperator unaryExpr 
+| IDENTIFIER LBRACKET expression RBRACKET
+| IDENTIFIER multiAccess 
+
+
+multiAccess: multiAccess LBRACKET NUM_CHAR RBRACKET
+| LBRACKET NUM_CHAR RBRACKET

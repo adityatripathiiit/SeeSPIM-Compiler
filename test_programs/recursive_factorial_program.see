@@ -1,0 +1,35 @@
+/*
+    This program implements a function which calcuates factorial of a number using recursion.
+    The program takes input from user and outputs value.
+*/
+
+/*
+    Recursive factorial function
+*/
+int factorial(int n){
+   if(n==0){
+       return 1;
+   } else if(n==1) {
+       return 1;
+   } else {
+       return n*factorial(n-1); // Recursive call
+   }
+}
+
+// Main function
+void main(){
+
+    string msg;
+    msg = "Enter a value: ";
+    output(string, msg);
+    Newline();
+
+    int n;
+    input(int,n);
+    int res;
+    res = factorial(n);
+    msg = "Result is : ";
+    output(string, msg);
+    output(int,res);
+    Newline();
+}

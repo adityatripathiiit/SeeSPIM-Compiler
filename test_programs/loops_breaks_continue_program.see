@@ -1,0 +1,61 @@
+/*
+    This program implements various kinds of loop break and continue statements
+*/
+
+int decrement(int val){
+    return val-1;
+}
+
+int increment(int val){
+    return val+1;
+}
+
+void main(){
+
+    /*
+        Loop will print 10, 9, 8 and then break
+    */
+    int index;    
+    for(index=10;index>=0;index=decrement(index)){
+        if(index==7) {
+            string message;
+            message = "Breaking the Loop";
+            output(string, message);
+            Newline();
+            break;
+        }
+        output(int, index);    
+    }
+
+    /*
+        Loop will print 0, 1, 2, 3 and it will skip printing 4 and 5, then it will print 6, and 7, and then break
+    */
+    index = 0;
+    while(1==1){
+        if(index==4 || index==5) {
+            index = index + 1;
+            continue;
+        } else if(index > 7) {
+            break;
+        }
+        output(int, index);
+        index = index + 1;
+    }
+
+    Newline();
+
+    /*
+        Nested loops
+    */
+    int j, k;    
+    while(j<3){
+        for(k=0;k<3;){            
+            output(int, j);
+            output(int, k);
+            Newline();
+            k=k+1;
+        }
+        j=increment(j);
+    }    
+
+}

@@ -1,0 +1,21 @@
+/*
+    This program implements scope using {}, it can be seen that value of variable z
+    is different for each scope
+*/
+
+int z;
+void changeValueofZ(){
+    z = 4;
+}
+
+void main(){
+    
+    changeValueofZ();
+    
+    {
+        int z;
+        z = 1; // Change value of z locally        
+        output(int,z); // Will print 1
+    } 
+    output(int, z); // Will print 4
+}

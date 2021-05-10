@@ -1,0 +1,96 @@
+/*
+    This program implements various if, ifelse, elseif
+*/
+
+void main(){
+
+	int a,b; 
+	a = 0;
+	b = 2; 
+	int d;
+	d = 3;
+
+	if(a<1 || b<=2 ){
+		int res; 
+		res = 1;
+		output(int, res); 
+	}
+
+	if(a >= 0  && b > 2  ){
+		int res;
+		res = 2;
+		output(int, res); 
+	}
+	if(a>=0 && b>=2 ){
+		int res;
+		res=3;
+		output(int, res); 
+	}
+	
+
+	if(b==2){
+		int res;
+		res = 4;
+		output(int, res); 
+	}
+
+	
+
+	if(b > 4){
+		int res ;
+		res = 5;
+		output(int,res);
+	}
+
+	
+
+	if(b < 4){
+		int res ;
+		res = 6;
+		output(int,res);
+	}
+
+	
+	
+
+	if( b!=3){
+		int res ;
+		res = 7;
+		output(int, res); 
+	} else {
+        int pp;
+        pp = 0;
+    }
+
+
+
+	if( b!=2){
+		int res ;
+		res = 8;
+		output(int, res); 
+	}	
+
+	
+
+	if(a==0) {		
+		if(a>7){
+			int oo;
+			oo = 4;
+		} 
+		else if(a>7) {
+			int o;
+			o = 5;
+		} else {
+			output(int,a);
+			a = a+9;
+			int res;
+			res = 88;
+			output(int,res);
+			int x;
+			for(x=0;x<a;x=x+1){
+				output(int, x);
+			}
+		}		
+	}
+
+}

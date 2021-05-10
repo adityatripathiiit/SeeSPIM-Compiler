@@ -1,0 +1,25 @@
+/*
+    This program implements multi dimensional array access and assigning
+*/
+
+void main(){
+
+    int x, a[10][11][12][5][1][2];
+    x=10;
+
+    a[5][3][10][4][0][1] = x+1;
+    a[0][2][10][6][0][0] = x-1;
+    int y;
+    y =  a[5][3][10][4][0][1] + a[0][2][10][6][0][0];
+
+    output(int,y);
+
+    int a2[10][10][5][1];
+
+    a2[2][0][1][0] = a[5][3][10][4][0][1];
+
+    y = a2[2][0][1][0];
+
+    output(int,y);
+
+}

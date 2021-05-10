@@ -1,0 +1,13 @@
+/*
+    This program evaluates complex expression
+*/
+
+void main(){
+    int arr[5], x, exp;
+    arr[0]=1;
+    arr[1]=1;
+    arr[4] = 50;    
+    x = 0;          
+    exp = 100*100*5*(50 - 100/2) - arr[(50/2-21)*arr[arr[x]]]*2 + 2*50/1 +  ( 1 -arr[arr[arr[arr[0]]]] ) + 100;
+    output(int,exp);
+}

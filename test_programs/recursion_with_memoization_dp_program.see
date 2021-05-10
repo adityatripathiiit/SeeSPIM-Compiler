@@ -1,0 +1,82 @@
+/*
+    This program intends to solve the maximum sum in an array such that no two values
+    are adjacent using Dynamic Programming (Recursion with Memoization)
+*/
+
+
+int arr[10], dp[10];
+
+/*
+    Initializes array and dp values
+*/
+void initializeArray(int array_size){
+    arr[0] = 1;
+    arr[1] = 2;
+    arr[2] = 3;
+    arr[3] = 65;
+    arr[4] = 6;
+    arr[5] = 8;
+    arr[6] = 10;
+    arr[7] = 9;
+    arr[8] = 13;
+    arr[9] = 92;
+    int index;
+    for(index=0;index<array_size;index=index+1){
+        dp[index] = -1;
+    }
+}
+
+/*
+    Computes maximum of two numbers using ternary operator
+*/
+int max(int x, int y){
+    int max_value;
+    max_value=0;
+    x>=y?max_value=x:max_value=y;
+    return max_value;
+}
+
+/*
+    Recursion with Memoization -> DP
+*/
+int recursionWithMemo(int index, int array_size){
+
+    // Base case
+    if(index >= array_size) {
+        return 0;
+    }
+
+    // Return if in memo
+    if(dp[index] != -1){
+        string s;
+        s = "Used Memoized Value at Index: ";
+        output(string,s);
+        output(int,index);
+        Newline();
+        return dp[index];
+    }
+
+    // Recursive cases
+    int case1, case2;
+    case1 = recursionWithMemo(index+2, array_size); 
+    case1 =  arr[index]+case1;
+    case2 =  recursionWithMemo(index+1, array_size);
+
+    // Store optimal value in memo
+    dp[index] =  max(case1, case2);
+    
+    return dp[index];
+}
+
+/*
+    Main Function
+*/
+void main(){   
+    int array_size; 
+    array_size = 10;           
+    initializeArray(array_size);    
+    int result;        
+    result = recursionWithMemo(0, array_size);
+    output(int, result);
+}
+

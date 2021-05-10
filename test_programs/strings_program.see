@@ -1,0 +1,46 @@
+/*
+    This programs implements string functionalities
+*/
+
+void main(){   
+
+    // Takes as input name and prints it
+    string input_msg, output_msg, output_msg_2;
+    input_msg = "Enter your name please : ";
+    output_msg = "Your name is : ";
+    output_msg_2 = "Changed name is : ";
+    output(string, input_msg);
+
+    string name;
+    input(string, name);
+
+    output(string, output_msg);
+    output(string,name);
+    Newline();
+
+
+    // String indexing and assigning
+    name = "THISWILLBECHANGED";
+    name[4]="w";
+    name[8]="b";
+    name[10]="c";    
+
+    // Concatenation
+    output(string, output_msg_2);
+    output(string, name);    
+    Newline();
+    string concatLeft;
+    string tempString;
+    tempString = "Enter First String: ";
+    output(string,tempString);
+    input(string,concatLeft);
+    tempString = "Enter Second String: ";
+    output(string,tempString);
+    string concatRight;
+    input(string,concatRight);
+    tempString = "Concatenated String Using + operator: ";
+    output(string,tempString);
+    concatLeft = concatLeft+concatRight; // Concatenation of strings using + operator
+    output(string,concatLeft);
+    Newline();
+}

@@ -1,0 +1,37 @@
+/*
+    This program implements various functions
+*/
+
+int decrement(int x){
+    return x-1;
+}
+
+int call_me(int x){    
+    output(int,x);
+    int i;
+    for(i=5;i>0;i=decrement(i)){
+        output(int,i);
+    }
+
+    for(i=0;i<5;){
+        output(int,i);        
+        i=i+1;
+    }        
+}
+
+void printPlease(int y){
+    output(int,y);
+}
+
+
+void main() {
+    call_me(100);  
+    int x;
+    x = 53;
+    printPlease(x);
+    int y;
+    y = 39;
+    x = 54;
+    output(int, x); 
+    printPlease(y);
+}

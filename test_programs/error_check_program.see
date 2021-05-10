@@ -1,0 +1,46 @@
+/*
+	This program contains lots of errors
+*/
+
+/*
+	Fibonacci recursive function
+*/
+int fibonacci(int x){
+	if(x==0){
+		return 1;	
+	}
+	return fibonacci(x-1)+fibonacci(x-2);
+}
+
+/*
+	Function that tries to index array with string and use mathematical operations on string
+*/
+int wrongfunction(){
+	string currString; 
+	currString = "rr";
+	int array[10]; 
+	int z;
+	z = array[currString];  // Indexing array using string
+	z = currString*3; // Using mathematical operators on string
+	return currString;  // Returning string even if return type is int
+}
+
+/*
+	Main function 
+*/
+void main(){
+		break; // Break statement without any for/while outside
+		continue; // Continue statement without any for/while outside
+		int b,x,i,z;
+		char p; 
+		p = 1; // Assigning integer to character
+		p = notdefinedfunction(); // Calling undefined function
+		p = fibonacci(1,2); // Calling with wrong number of parameters
+		p = fibonacci(p); // Calling with invalid value
+		input(int, p);
+		input(int,x);
+		input(int, h);  //  h is not defined anywhere
+		z=fun(x);  // Calling undefined function
+		output(int,z);
+		return z; // Returning string even if function has return type void
+}

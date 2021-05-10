@@ -1,0 +1,12 @@
+/*
+    This program implements conditional statements using ternary operators
+*/
+
+void main(){
+    int x;
+    x=10;
+    x==9? x=5:x=4;
+    output(int,x);
+    x==4? x=5:x=1;
+    output(int,x);
+}
