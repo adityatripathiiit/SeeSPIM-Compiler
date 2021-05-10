@@ -536,7 +536,7 @@ Following test programs have been implemented. There tasks are self-explanatory 
 
 ## References and Credits :credit_card:
 
-This project has been made as a part of project component of the course **CS:327 Compilers** offered at IIT Gandhinagar in Semester-II of AY 2020-21 under the guidance of Prof. Bireshwar Das.
+This project has been made as a part of project component of the course **CS:327 Compilers** offered at IIT Gandhinagar in Semester-II of AY 2020-21 under the guidance of Prof. Bireswar Das.
 
 Few code snippets have been referenced and inspired from [this](https://github.com/amankr/Mini-Compiler) repository.
 
